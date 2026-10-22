@@ -1,0 +1,16 @@
+/* 가운데 영역(container) */
+.container {
+    width: 1280px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* row 영역(양쪽 패딩) */
+.row {
+    padding: 0 16px;
+}
+
+/* 아이콘 */
+.icon {
+    background-image: url(../icon/icon.png);
+}

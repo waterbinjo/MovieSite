@@ -1,0 +1,319 @@
+/* 배너 영역 */
+#banner {
+    position: relative;
+}
+#banner > .container {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+.banner_manu {
+    width: 100%;
+    /* background-color: red; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 17px;
+}
+
+/* 왼쪽 */
+.bm_left {
+    display: flex;
+    align-items: center;
+}
+.bm_left ul {
+    display: flex;
+    align-items: center;
+}
+.bm_left ul li {
+}
+.bm_left ul li a {
+    display: block;
+    padding: 4px 14px;
+    letter-spacing: -1px;
+    color: #fff;
+}
+.bm_left ul li a:hover {
+    color: #6f2bc7;
+}
+.bm_left ul li.total {
+    margin-right: 10px;
+}
+.bm_left ul li.total a {
+    border: 1px solid #dfdfe0;
+    font-size: 16px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+.bm_left ul li.total a:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+.bm_left ul li.total a .fa-bars {
+    padding-right: 6px;
+}
+
+/* 오른쪽 */
+.bm_right {
+    display: flex;
+    align-items: center;
+}
+.bm_right ul {
+    display: flex;
+    align-items: center;
+}
+.bm_right ul li {
+}
+.bm_right ul li a {
+    display: block;
+    color: #fff;
+    padding: 7px 14px;
+    letter-spacing: -1px;
+}
+.bm_right ul li a:hover {
+    color: #6f2bc7;
+}
+.bm_right ul:nth-child(2) {
+}
+.bm_right ul:nth-child(2) li {
+    margin-left: 10px;
+}
+.bm_right ul:nth-child(2) li a {
+    width: 143px;
+    text-align: center;
+    font-weight: 600;
+    background-color: #fff;
+    border: 1px solid #38116a;
+    color: #38116a;
+    box-sizing: border-box;
+    padding: 7px 15px;
+    transition: all 0.3s;
+}
+.bm_right ul:nth-child(2) li.purple a {
+    background-color: #38116a;
+    border: 1px solid #6f2bc7;
+    color: #fff;
+}
+.bm_right ul:nth-child(2) li.white a:hover {
+    background-color: #6f2bc7;
+    color: #fff;
+}
+.bm_right ul:nth-child(2) li.purple a:hover {
+    background-color: #6f2bc7;
+}
+
+/* line */
+.line {
+    position: relative;
+}
+.line::after {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+/* slider */
+.slider {
+    width: 100%;
+}
+.slider .swiper-wrapper {
+    width: 100%;
+    height: 600px;
+}
+.slider .ss1 {
+    height: inherit; /* 부모의 값 상속 */
+    background: url(../img/main_slider01.webp) no-repeat center top;
+    background-size: cover;
+}
+.slider .ss2 {
+    height: inherit;
+    background: url(../img/main_slider02.webp) no-repeat center top;
+    background-size: cover;
+}
+.slider .ss3 {
+    height: inherit;
+    background: url(../img/main_slider03.webp) no-repeat center top;
+    background-size: cover;
+}
+.slider .ss4 {
+    height: inherit;
+    background: url(../img/main_slider04.webp) no-repeat center top;
+    background-size: cover;
+}
+.slider .ss5 {
+    height: inherit;
+    background: url(../img/main_slider05.webp) no-repeat center top;
+    background-size: cover;
+}
+.slider .ss6 {
+    height: inherit;
+    background: url(../img/main_slider06.webp) no-repeat center top;
+    background-size: cover;
+}
+.slider .ss7 {
+    height: inherit;
+    background: url(../img/main_slider07.webp) no-repeat center top;
+    background-size: cover;
+}
+.slider .ss8 {
+    height: inherit;
+    background: url(../img/main_slider08.webp) no-repeat center top;
+    background-size: cover;
+}
+
+.slider h2 {
+    font-size: 62px;
+    font-weight: 500;
+    margin-top: 200px;
+    line-height: 1.2;
+    color: #fff;
+    position: relative;
+}
+.slider h2 em {
+    display: block;
+    width: fit-content; /* ⭐ 글자 길이만큼만 너비 */
+    position: relative;
+
+    font-weight: 100;
+    font-size: 59px;
+}
+.slider p {
+    color: #fff;
+    font-size: 27px;
+    padding-top: 55px;
+}
+/* 가로줄: 가상요소 */
+.slider h2 em::after {
+    content: "";
+    width: 100%; /* ⭐ em의 글자 길이만큼 */
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 1300px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .banner_manu {
+        justify-content: flex-end;
+    }
+    .bm_left {
+        display: none;
+    }
+    .bm_right ul:nth-child(1) {
+        display: none;
+    }
+}
+
+@media (max-width: 960px) {
+    .slider .swiper-wrapper {
+        height: 500px;
+    }
+    .slider h2 {
+        font-size: 37px;
+        margin-top: 160px;
+        margin-left: 30px;
+    }
+    .slider h2 em {
+        font-size: 34px;
+    }
+    .slider p {
+        font-size: 20px;
+        padding-top: 30px;
+        margin-left: 30px;
+    }
+    /* .slider h2::after {
+        width: 245px;
+        bottom: -15px;
+    } */
+    .slider h2 em::after {
+        bottom: -15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bm_right ul:nth-child(2) li {
+        margin-left: 10px;
+    }
+    .bm_right ul:nth-child(2) li a,
+    .bm_right ul:nth-child(2) li.purple a {
+        width: 90px;
+        padding: 5px 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid #fff;
+        color: #fff;
+
+        white-space: nowrap;
+    }
+    .bm_right ul:nth-child(2) li.white a:hover,
+    .bm_right ul:nth-child(2) li.purple a:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: #fff;
+    }
+
+    .slider .swiper-wrapper {
+        height: 400px;
+    }
+    .slider h2 {
+        font-size: 30px;
+        margin-top: 150px;
+        margin-left: 10px;
+    }
+    .slider h2 em {
+        font-size: 25px;
+    }
+    .slider p {
+        font-size: 18px;
+        padding-top: 25px;
+        margin-left: 10px;
+    }
+    /* .slider h2::after {
+        width: 180px;
+        bottom: -15px;
+    } */
+    .slider h2 em::after {
+        bottom: -15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider .swiper-wrapper {
+        height: 200px;
+    }
+    .slider h2 {
+        font-size: 20px;
+        margin-top: 60px;
+    }
+    .slider h2 em {
+        font-size: 18px;
+    }
+    .slider p {
+        font-size: 16px;
+        padding-top: 15px;
+    }
+    /* .slider h2::after {
+        width: 130px;
+        bottom: -8px;
+    } */
+    .slider h2 em::after {
+        bottom: -8px;
+    }
+}
+
+@media (max-width: 360px) {
+}
