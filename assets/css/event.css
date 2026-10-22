@@ -1,0 +1,93 @@
+/* 가운데 영역 */
+.event {
+    padding: 0 0 100px 0;
+}
+.event h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* display: flex의 경우 */
+.event img {
+    display: block;
+}
+.event_inner {
+    display: flex;
+    justify-content: space-between;
+}
+.event_left {
+    width: 66%; /* 이미지 크기 / 전체 크기 * 100 */
+    display: flex;
+    flex-wrap: wrap;
+}
+.event_box1 {
+    width: 100%;
+    margin-bottom: 2.1%;
+}
+.event_box2,
+.event_box3 {
+    width: 50%;
+}
+.event_right {
+    width: 32%; /* 이미지 크기 / 전체 크기 * 100 */
+}
+
+/* 미디어쿼리 */
+@media (max-width: 1300px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 960px) {
+}
+
+@media (max-width: 768px) {
+    #event .row {
+        padding: 0 24px;
+        background-color: #fff;
+    }
+    .event {
+        padding: 24px 0;
+    }
+    .event h2 {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .event_left {
+        width: 100%;
+    }
+    .event_right {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    #event {
+        padding: 16px;
+        padding-top: 0;
+    }
+    #event .row {
+        padding: 0 16px;
+    }
+    .event {
+        padding: 16px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #event {
+        padding: 12px;
+        padding-top: 0;
+    }
+    #event .row {
+        padding: 0 12px;
+    }
+    .event {
+        padding: 12px 0;
+    }
+}
+
+@media (max-width: 360px) {
+}

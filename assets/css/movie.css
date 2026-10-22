@@ -16,10 +16,7 @@
     background: #fff;
     border: 1px solid #d0d0d0;
     box-sizing: border-box;
-}
-/* 영화 차트 메뉴 버튼 선 겹치게 */
-.movie_title ul li + li {
-    margin-left: -1px;
+    margin-left: -1px; /* 왼쪽 마진을 -1px 줄여서 선이 겹치도록 */
 }
 .movie_title ul li a {
     display: block;
@@ -187,6 +184,10 @@
     font-weight: 300;
 }
 
+.movie_chart .swiper-slide {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
 /* 미디어쿼리 */
 @media (max-width: 1300px) {
     .container {
@@ -204,8 +205,24 @@
 }
 
 @media (max-width: 768px) {
+    #movie {
+        padding: 24px;
+        padding-right: 0;
+        position: relative;
+    }
+    #movie::after {
+        content: "";
+        width: 24px;
+        height: 900px;
+        background-color: #d9d9d9;
+
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
     #movie .row {
         padding: 0 24px;
+        padding-right: 0;
         background-color: #fff;
     }
     .movie {
@@ -213,7 +230,7 @@
     }
     .movie h2.ir_so {
         position: static; /* 주어진 포지션을 없앰 */
-        width: auto;
+        width: calc(100% - 48px);
         height: auto;
         line-height: normal;
         text-indent: 0;
@@ -242,23 +259,19 @@
         color: #666;
         border-bottom: 2px solid #666;
     }
-    /* .movie_title ul li.active a::before {
-        content: "";
-        width: 100%;
-        height: 1px;
-        background-color: #666;
-        position: absolute;
-        left: 0;
-        top: 0;
-    } */
 }
 
 @media (max-width: 600px) {
     #movie {
         padding: 16px;
+        padding-right: 0;
+    }
+    #movie::after {
+        width: 16px;
     }
     #movie .row {
         padding: 0 16px;
+        padding-right: 0;
     }
     .movie {
         padding: 16px 0;
@@ -266,14 +279,22 @@
     .movie_title ul li a {
         margin-right: 20px;
     }
+    .movie h2.ir_so {
+        width: calc(100% - 32px);
+    }
 }
 
 @media (max-width: 480px) {
     #movie {
         padding: 12px;
+        padding-right: 0;
     }
     #movie .row {
         padding: 0 12px;
+        padding-right: 0;
+    }
+    #movie::after {
+        width: 12px;
     }
     .movie {
         padding: 12px 0;
@@ -281,6 +302,9 @@
     .movie_title ul li a {
         margin-right: 10px;
         font-size: 14px;
+    }
+    .movie h2.ir_so {
+        width: calc(100% - 24px);
     }
 }
 

@@ -4,13 +4,15 @@
     border-bottom: 1px solid #777777;
 }
 #banner {
-    /* height: 600px; */
 }
 #movie {
     background-color: #d9d9d9;
     padding: 24px;
 }
 #event {
+    background-color: #d9d9d9;
+    padding: 24px;
+    padding-top: 0;
 }
 #opening {
 }
