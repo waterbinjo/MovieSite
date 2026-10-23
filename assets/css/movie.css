@@ -289,6 +289,9 @@
         padding: 12px;
         padding-right: 0;
     }
+    #movie::after {
+        height: 800px;
+    }
     #movie .row {
         padding: 0 12px;
         padding-right: 0;

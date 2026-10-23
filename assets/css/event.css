@@ -1,6 +1,7 @@
 /* 가운데 영역 */
 .event {
-    padding: 0 0 100px 0;
+    padding: 100px;
+    padding-top: 50px;
 }
 .event h2 {
     font-size: 30px;
