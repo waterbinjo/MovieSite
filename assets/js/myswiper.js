@@ -32,7 +32,7 @@ var swiper = new Swiper(".slider2", {
         },
     },
     autoplay: {
-        delay: 2000, // 2초마다 자동 이동, 3000이면 3초
+        delay: 1500, // 2초마다 자동 이동, 3000이면 3초
         disableOnInteraction: false, // 직접 넘긴 뒤에도 자동재생 계속
     },
     // loop: true, // 마지막 포스터 다음에 다시 처음으로

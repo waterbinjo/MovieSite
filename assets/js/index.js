@@ -32,3 +32,93 @@ movBtn.forEach((menu, index) => {
         currentSwiper.slideTo(0, 0);
     });
 });
+
+// help
+// 공지사항의 탭 메뉴
+const tabList = document.querySelectorAll(".notice > ul > li > a");
+const tabContents = document.querySelectorAll(".notice > ul > li > ul");
+
+// 전부 숨기고 active만 보이기
+tabContents.forEach((ul) => {
+    ul.style.display = "none";
+});
+document.querySelector(".notice > ul > li.active > ul").style.display = "block";
+// tabContents[0].style.display = "block";
+
+tabList.forEach((a) => {
+    a.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // 모든 메뉴 active를 제거하고 전체 컨텐츠를 숨기기
+        tabList.forEach((item) => {
+            item.parentElement.classList.remove("active");
+            item.nextElementSibling.style.display = "none";
+        });
+
+        // 클릭한 것만 active + 해당하는 컨텐츠가 보이기
+        a.parentElement.classList.add("active"); // a가 아니라 a의 부모인 li한테 active를 붙여야함 -> parentElement
+        a.nextElementSibling.style.display = "block";
+        // 내 기준으로 동생은 nextElementSibling
+    });
+});
+
+// 모바일 메뉴
+const ham = document.querySelector("#mNav .ham");
+const mNavMenu = document.querySelector("#mNav ul");
+
+ham.addEventListener("click", (e) => {
+    e.preventDefault();
+    mNavMenu.classList.toggle("active");
+});
+
+// 스크롤 이벤트
+window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY + window.innerHeight / 2;
+
+    let event = document.querySelector("#event");
+    let eventTop = event.offsetTop;
+
+    if (scrollTop >= eventTop) {
+        document.querySelector(".event_left").classList.add("show");
+        document.querySelector(".event_right").classList.add("show");
+    } else {
+        document.querySelector(".event_left").classList.remove("show");
+        document.querySelector(".event_right").classList.remove("show");
+    }
+
+    let opening = document.querySelector("#opening");
+    let openingTop = opening.offsetTop;
+    let openBox = document.querySelectorAll(".open_box > div");
+
+    if (scrollTop > openingTop) {
+        openBox.forEach((div) => {
+            div.classList.add("bounce");
+        });
+    } else {
+        openBox.forEach((div) => {
+            div.classList.remove("bounce");
+        });
+    }
+
+    let newSection = document.querySelector("#new");
+    let newSectionTop = newSection.offsetTop;
+
+    if (scrollTop >= newSectionTop) {
+        document.querySelector(".new_left").classList.add("show");
+        document.querySelector(".new_right").classList.add("show");
+    }
+
+    let help = document.querySelector("#help");
+    let helpTop = help.offsetTop;
+    let helpBox = document.querySelectorAll(".help > div");
+
+    if (scrollTop >= helpTop) {
+        helpBox.forEach((div) => {
+            div.classList.add("show");
+        });
+    } else {
+        helpBox.forEach((div) => {
+            div.classList.remove("show");
+        });
+    }
+});

@@ -1,0 +1,282 @@
+/* 헬프 영역 */
+.help {
+    padding: 100px 0;
+    padding-top: 0;
+    display: flex;
+    gap: 2%;
+}
+.help > div {
+    flex: 1;
+
+    transform: translateY(200px);
+    opacity: 0;
+    transition: all 0.33s ease-in-out;
+}
+.help > div:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.help > div:nth-child(3) {
+    transition-delay: 0.4s;
+}
+.help > div.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+.help > div h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* 공지사항 */
+.notice {
+    padding: 17px;
+    border: 1px solid #c2c2c2;
+    height: 350px;
+
+    position: relative;
+}
+.notice > ul {
+    display: flex;
+}
+.notice > ul > li > a {
+    display: block; /* ⭐ 네모를 만들어야 해서 블럭 */
+    width: 120px;
+    padding: 10px 20px;
+
+    border: 1px solid #b3b3b3;
+    margin-left: -1px;
+    box-sizing: border-box;
+
+    font-size: 15px;
+    text-align: center;
+    background-color: #d9d9d9;
+    color: #5b5b5b;
+}
+.notice > ul > li.active > a {
+    background-color: #fff;
+}
+.notice > ul > li > ul {
+    position: absolute;
+    left: 17px;
+    top: 70px;
+    width: 90%;
+}
+.notice > ul > li > ul > li {
+    padding: 17px;
+    border-bottom: 1px solid #b3b3b3;
+}
+.notice > ul > li > ul > li:last-child {
+    border: 0;
+}
+.notice > ul > li > ul > li > dl > dt strong {
+    color: #525252;
+}
+.notice > ul > li > ul > li > dl > dt em {
+    color: #777;
+}
+.notice > ul > li > ul > li > dl > dd {
+    /* 한 줄 생략 삼총사 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: #777;
+    padding-top: 3px;
+}
+
+/* 메가박스 할인카드 */
+.card {
+    padding: 17px;
+    border: 1px solid #c2c2c2;
+}
+.card ul {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+.card ul li {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #c2c2c2;
+}
+.card ul li a {
+    display: flex;
+}
+.card ul li a span.card_img {
+    width: 105px;
+    margin-right: 5%;
+}
+.card ul li a span.desc {
+    display: flex;
+    flex-direction: column;
+}
+.card ul li a span.desc strong {
+    /* display: block; */
+    font-size: 16px;
+    font-weight: 500;
+    color: #6c6c6c;
+}
+.card ul li a span.desc em {
+    font-size: 14px;
+    font: 300px;
+    color: #656565;
+}
+
+/* 고객센터 */
+.service {
+}
+.service ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.service ul li {
+    width: 50%;
+    height: 192px;
+    border: 1px solid #b9b9b9;
+    box-sizing: border-box;
+    margin-left: -1px;
+    margin-bottom: -1px;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.service ul li a {
+    display: block;
+    width: 100%;
+}
+.service ul li a span img {
+    width: 83px;
+}
+.service ul li a strong {
+    display: block;
+    font-size: 16px;
+    color: #555;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 1300px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .help {
+        flex-wrap: wrap;
+    }
+    .help > div {
+        flex: none;
+    }
+    .help_box1 {
+        width: 49%;
+    }
+    .help_box2 {
+        width: 49%;
+    }
+    .help_box3 {
+        width: 100%;
+    }
+    .service ul {
+        border: 1px solid #b3b3b3;
+    }
+    .service ul li {
+        width: 25%;
+        border: 0;
+    }
+}
+
+@media (max-width: 960px) {
+}
+
+@media (max-width: 768px) {
+    #help {
+        background: #d9d9d9;
+    }
+    #help .row {
+        padding: 0;
+    }
+    .help {
+        padding: 24px 0;
+        padding-top: 0;
+    }
+    .help > div h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .help_box1 {
+        width: 100%;
+        margin-bottom: 24px;
+        background-color: #fff;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+    .help_box2 {
+        width: 100%;
+        background-color: #fff;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+    .help_box3 {
+        background-color: #fff;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    .service ul {
+        border: 0;
+    }
+    .service ul li {
+        height: 160px;
+    }
+    .service ul li a img {
+        width: 60px;
+    }
+    .service ul li a strong {
+        font-size: 16px;
+    }
+}
+@media (max-width: 600px) {
+    #help {
+        padding: 16px;
+        padding-top: 0;
+    }
+    .help {
+        padding-bottom: 0;
+    }
+    .service ul li {
+        width: 50%;
+        height: 100px;
+    }
+    .help_box1 {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    .help_box2 {
+        padding: 16px;
+    }
+    .help_box3 {
+        margin-top: 16px;
+    }
+}
+@media (max-width: 480px) {
+    #help {
+        padding: 12px;
+        padding-top: 0;
+    }
+    .notice > ul > li > a {
+        width: 75px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .card ul {
+        height: 400px;
+    }
+}

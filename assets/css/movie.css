@@ -1,6 +1,6 @@
 /* 무비 영역 */
 .movie {
-    padding: 100px;
+    padding: 100px 0;
 }
 .movie_title {
     margin-bottom: 60px;

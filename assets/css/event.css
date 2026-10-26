@@ -21,21 +21,44 @@
     width: 66%; /* 이미지 크기 / 전체 크기 * 100 */
     display: flex;
     flex-wrap: wrap;
+
+    transform: translateY(600px);
+    opacity: 0;
+    transition: all 0.33s cubic-bezier(0, 0.69, 0.38, 1.02);
 }
+.event_left.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .event_box1 {
     width: 100%;
     margin-bottom: 2.1%;
+    box-shadow: 0 0 10px #616161b9;
 }
 .event_box2,
 .event_box3 {
     width: 50%;
+    box-shadow: 0 0 10px #616161b9;
 }
 .event_right {
     width: 32%; /* 이미지 크기 / 전체 크기 * 100 */
+    box-shadow: 0 0 10px #616161b9;
+
+    transform: translateY(600px);
+    opacity: 0;
+    transition: all 0.33s 0.2s cubic-bezier(0, 0.69, 0.38, 1.02);
+}
+.event_right.show {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /* 미디어쿼리 */
 @media (max-width: 1300px) {
+    .container {
+        width: 100%;
+    }
 }
 
 @media (max-width: 1024px) {

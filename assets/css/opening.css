@@ -74,6 +74,20 @@
     color: #fff;
     border: 1px solid #fff;
     /* position: relative; */
+
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.33s cubic-bezier(0.59, 0.05, 0.01, 1.4);
+}
+.open_box > div:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.open_box > div:nth-child(3) {
+    transition-delay: 0.4s;
+}
+.open_box > div.bounce {
+    transform: scale(1);
+    opacity: 1;
 }
 .open_box > div h3 {
     display: inline-block;
